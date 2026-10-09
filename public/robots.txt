@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
  
 # Sitemap
-Sitemap: https://genai4se.github.io/ISEC26-Workshop/sitemap.xml
+Sitemap: https://genai4se.github.io/ISEC27-Workshop/sitemap.xml

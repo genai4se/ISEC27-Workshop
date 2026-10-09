@@ -21,6 +21,10 @@ playwright-report/
 test-results/
 .vite/
 
+# Lovable agent test files
+playwright.config.ts
+playwright-fixture.ts
+
 node_modules
 dist
 dist-ssr
