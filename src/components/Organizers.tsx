@@ -1,11 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Building2, FlaskConical } from "lucide-react";
-import raveendraImage from "@/assets/organizer/raveendra.webp";
+import raveendraImage from "@/assets/organizer/raveendra.png";
 import vibhuImage from "@/assets/organizer/vibhu-hd.jpg";
-import ravindraImage from "@/assets/organizer/Ravindra Naik.webp";
+import ravindraImage from "@/assets/organizer/Ravindra Naik.png";
 import karthikImage from "@/assets/organizer/karthik.jpg";
 import rushikeshImage from "@/assets/organizer/rushikesh-hd.jpg";
-import lalitImage from "@/assets/organizer/lalit.webp";
+import lalitImage from "@/assets/organizer/lalit.png";
 import shrutiImage from "@/assets/organizer/shruti.jpeg";
 
 const organizers = [
