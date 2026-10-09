@@ -91,8 +91,8 @@ const Navbar = () => {
         sticky top-0 z-50 w-full
         transition-all duration-300
         ${scrolled
-          ? "bg-background/95 backdrop-blur-xl shadow-md border-b border-primary/10"
-          : "bg-background/80 backdrop-blur-md border-b border-primary/5"
+          ? "bg-background/95 backdrop-blur-xl shadow-md border-b border-border"
+          : "bg-background/80 backdrop-blur-md border-b border-border"
         }
       `}
     >
@@ -206,7 +206,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {mobileOpen && (
-          <nav className="lg:hidden border-t border-primary/10 py-3">
+          <nav className="lg:hidden border-t border-border py-3">
             <div className="flex flex-col gap-1 pb-2">
 
               {navItems.map((item) => {

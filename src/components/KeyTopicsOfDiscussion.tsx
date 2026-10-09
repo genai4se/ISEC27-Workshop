@@ -52,32 +52,30 @@ const questions = [
   }
 ];
 
-const KeyTopicsOfDiscussion
-  = () => {
-    return (
-      <section id="discussion" className="py-24 px-6 bg-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Key Topics of Discussion</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The workshop seeks discussion and exploration of critical questions surrounding Generative AI, Agentic AI, and Software Engineering.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {questions.map((question) => (
-              <Card key={question.title} className="group relative overflow-hidden p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border-2 border-primary/10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center mb-6 shadow-lg">
-                  <question.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-card-foreground mb-3">{question.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{question.text}</p>
-              </Card>
-            ))}
-          </div>
+const KeyTopicsOfDiscussion = () => {
+  return (
+    <section id="discussion" className="py-16 md:py-20 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Key Topics of Discussion</h2>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+            The workshop seeks discussion and exploration of critical questions surrounding Generative AI, Agentic AI, and Software Engineering.
+          </p>
         </div>
-      </section>
-    );
-  };
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {questions.map((question) => (
+            <Card key={question.title} className="p-6 transition-shadow duration-200 hover:shadow-card border border-border bg-card">
+              <div className="w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center mb-4">
+                <question.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">{question.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{question.text}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default KeyTopicsOfDiscussion
-  ;
+export default KeyTopicsOfDiscussion;

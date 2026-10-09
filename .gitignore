@@ -7,7 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Local environment and credentials
+.env*
+!.env.example
+
+# Bun binary lockfile (project uses package-lock.json)
 bun.lockb
+
+# Generated project and test data
+.lovable/
+coverage/
+playwright-report/
+test-results/
+.vite/
+
 node_modules
 dist
 dist-ssr
@@ -23,3 +36,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+tmp/

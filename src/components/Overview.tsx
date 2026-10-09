@@ -30,17 +30,29 @@ const features = [
   },
 ];
 
+const topics = [
+  "Agentic AI and Autonomous Software Actors",
+  "Software Engineering for GenAI and Agentic Systems",
+  "GenAI Across the Software Development Lifecycle (SDLC)",
+  "AgentOps: Operating, Monitoring, and Maintaining Agents",
+  "Legacy Modernization, Model Engineering, and Reverse Engineering",
+  "Trust, Security, Privacy, and Provenance",
+  "Human-AI Collaboration, Oversight, and Control",
+  "Software Architecture and Design for GenAI and Agentic Applications",
+  "Evaluation, Benchmarking, and Sustainable AI Systems",
+];
+
 const Overview = () => {
   return (
-    <section id="overview" className="py-24 px-6 bg-gradient-section">
+    <section id="overview" className="py-16 md:py-20 px-6 bg-gradient-section">
       <div className="max-w-6xl mx-auto">
-        <div className="grid items-start gap-8 mb-16 lg:grid-cols-[minmax(0,1fr)_340px]">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="grid items-start gap-8 mb-12 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               Workshop Overview
             </h2>
 
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-6 leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground mb-5 leading-relaxed">
               Generative AI is evolving from coding assistants and co-pilots
               toward AI systems that can plan, decide, and act inside software
               systems under human oversight. These systems are increasingly being
@@ -48,7 +60,7 @@ const Overview = () => {
               debugging, architecture, and other software engineering activities.
             </p>
 
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               The Fourth Workshop on Generative AI & Software Engineering
               explores Agentic AI, multi-agent systems, AgentOps, software
               architecture, legacy modernization, trust and security,
@@ -58,24 +70,25 @@ const Overview = () => {
             </p>
           </div>
 
-          <Card className="border-2 border-primary/10 bg-card p-5 shadow-sm">
-            <h4 className="mb-4 text-center text-xl font-bold text-primary">
-              IMPORTANT DATES
+          <Card className="border border-border bg-card p-5 shadow-card">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">
+              Important Dates
             </h4>
             <div className="text-sm">
               <ul className="space-y-3">
                 {importantDates.map((importantDate) => (
                   <li
-                    className="border-b border-primary/10 pb-3 leading-snug text-muted-foreground last:border-0 last:pb-0"
+                    className="border-b border-border pb-3 leading-snug text-muted-foreground last:border-0 last:pb-0"
                     key={importantDate.label}
                   >
-                    <strong className="text-sm text-primary">
+                    <strong className="text-sm text-foreground">
                       {importantDate.date}
-                    </strong><br />
+                    </strong>
+                    <br />
                     {importantDate.label}
                   </li>
                 ))}
-                <li className="border-b border-primary/10 pb-3 leading-snug text-muted-foreground last:border-0 last:pb-0">
+                <li className="leading-snug">
                   <a
                     className="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary/80"
                     href="#importantDates"
@@ -88,75 +101,37 @@ const Overview = () => {
           </Card>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-5 mb-12">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="p-8 hover:shadow-glow transition-all duration-300 hover:-translate-y-1 border-2 border-primary/10 bg-card"
+              className="p-6 transition-shadow duration-200 hover:shadow-card border border-border bg-card"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow">
-                <feature.icon className="w-7 h-7 text-white" />
+              <div className="w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center mb-4">
+                <feature.icon className="w-5 h-5 text-primary" />
               </div>
 
-              <h3 className="text-2xl font-bold text-card-foreground mb-3">
+              <h3 className="text-lg font-semibold text-card-foreground mb-2">
                 {feature.title}
               </h3>
 
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </Card>
           ))}
         </div>
 
-        <Card className="p-8 md:p-12 bg-gradient-hero text-white shadow-glow">
-          <h3 className="text-3xl font-bold mb-4">Workshop Topics</h3>
+        <Card className="p-6 md:p-10 border border-border bg-muted/50 shadow-card">
+          <h3 className="text-2xl font-bold text-foreground mb-5">Workshop Topics</h3>
 
-          <ul className="space-y-3 text-lg">
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Agentic AI and Autonomous Software Actors</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Software Engineering for GenAI and Agentic Systems</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>GenAI Across the Software Development Lifecycle (SDLC)</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>AgentOps: Operating, Monitoring, and Maintaining Agents</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Legacy Modernization, Model Engineering, and Reverse Engineering</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Trust, Security, Privacy, and Provenance</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Human-AI Collaboration, Oversight, and Control</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Software Architecture and Design for GenAI and Agentic Applications</span>
-            </li>
-
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">•</span>
-              <span>Evaluation, Benchmarking, and Sustainable AI Systems</span>
-            </li>
+          <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-base text-muted-foreground">
+            {topics.map((topic) => (
+              <li key={topic} className="flex items-start gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>{topic}</span>
+              </li>
+            ))}
           </ul>
         </Card>
       </div>
@@ -165,4 +140,3 @@ const Overview = () => {
 };
 
 export default Overview;
-

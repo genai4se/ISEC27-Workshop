@@ -47,44 +47,44 @@ const schedule = [
 const WorkshopSchedule = () => {
   return (
 
-    <section id="format" className="py-24 px-6 bg-gradient-section">
+    <section id="format" className="py-16 md:py-20 px-6 bg-gradient-section">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
 
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Workshop Format
           </h2>
 
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             Tentative schedule for the full-day workshop with invited talks,
             accepted papers, hands-on sessions, and panel discussions.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {schedule.map((day) => (
             <Card
               key={day.day}
-              className="overflow-hidden border-2 border-primary/10"
+              className="overflow-hidden border border-border shadow-card"
             >
-              <div className="bg-gradient-hero p-6 text-white">
-                <h3 className="text-2xl font-bold">{day.day}</h3>
-                <p className="text-white/90 text-lg mt-1">{day.title}</p>
+              <div className="border-b border-border bg-muted/60 px-6 py-4">
+                <h3 className="text-lg font-semibold text-foreground">{day.day}</h3>
+                <p className="text-sm text-muted-foreground mt-0.5">{day.title}</p>
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="p-4 md:p-6 space-y-1">
                 {day.sessions.map((session) => (
                   <div
                     key={session.time}
-                    className="flex gap-4 rounded-lg p-4 transition-colors hover:bg-primary/5"
+                    className="flex flex-col sm:flex-row gap-1 sm:gap-4 rounded-md p-3 transition-colors hover:bg-muted/60"
                   >
-                    <div className="flex min-w-[140px] items-center gap-2 font-semibold text-primary">
-                      <Clock className="h-5 w-5 flex-shrink-0" />
+                    <div className="flex min-w-[140px] items-center gap-2 text-sm font-semibold text-primary">
+                      <Clock className="h-4 w-4 flex-shrink-0" />
                       <span>{session.time}</span>
                     </div>
 
                     <div className="flex-1">
-                      <p className="font-medium text-card-foreground">
+                      <p className="text-sm font-medium text-card-foreground">
                         {session.topic}
                       </p>
                     </div>
@@ -95,8 +95,8 @@ const WorkshopSchedule = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-lg text-muted-foreground">
+        <div className="mt-10 text-center">
+          <p className="text-base text-muted-foreground">
             Final format will encourage engaging and strong interactions
             among all participants. Coffee breaks and networking sessions
             included throughout the day.

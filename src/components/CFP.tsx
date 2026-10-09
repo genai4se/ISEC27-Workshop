@@ -67,16 +67,16 @@ export const importantDates = [
 
 const CFP = () => {
     return (
-        <section id="cfp" className="py-24 px-6 bg-background">
+        <section id="cfp" className="py-16 md:py-20 px-6 bg-background">
             <div className="mx-auto max-w-6xl">
 
                 {/* Call for Papers */}
-                <div className="mb-16 text-center">
-                    <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+                <div className="mb-12 text-center">
+                    <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
                         Call for Papers
                     </h2>
 
-                    <p className="mx-auto max-w-4xl text-xl leading-relaxed text-muted-foreground">
+                    <p className="mx-auto max-w-4xl text-base md:text-lg leading-relaxed text-muted-foreground">
                         We invite original papers, extended abstracts, and poster papers
                         describing research, case studies, interesting experiments, best
                         practices, and lessons learned in applying Generative AI and
@@ -88,36 +88,36 @@ const CFP = () => {
 
                 {/* Topics of Interest */}
                 <section
-                    className="mt-16"
+                    className="mt-12"
                     aria-labelledby="research-tracks-heading"
                 >
-                    <div className="mb-8 text-center">
+                    <div className="mb-6 text-center">
                         <h3
                             id="research-tracks-heading"
-                            className="text-3xl font-bold text-foreground"
+                            className="text-2xl font-bold text-foreground"
                         >
                             Topics of Interest
                         </h3>
 
-                        <p className="mx-auto mt-3 max-w-3xl text-muted-foreground">
+                        <p className="mx-auto mt-2 max-w-3xl text-sm text-muted-foreground">
                             Topics of interest include but are not limited to:
                         </p>
                     </div>
 
-                    <div className="grid gap-6 lg:grid-cols-2">
+                    <div className="grid gap-5 lg:grid-cols-2">
                         {researchTracks.map((track) => (
                             <Card
                                 key={track.title}
-                                className="border-2 border-primary/10 p-8"
+                                className="border border-border p-6 shadow-card"
                             >
-                                <h4 className="mb-5 text-2xl font-bold text-card-foreground">
+                                <h4 className="mb-4 text-lg font-semibold text-card-foreground">
                                     {track.title}
                                 </h4>
 
-                                <ul className="space-y-3 text-muted-foreground">
+                                <ul className="space-y-2.5 text-sm text-muted-foreground">
                                     {track.topics.map((topic) => (
                                         <li key={topic} className="flex gap-3">
-                                            <span className="font-bold text-primary">•</span>
+                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                                             <span>{topic}</span>
                                         </li>
                                     ))}
@@ -130,33 +130,33 @@ const CFP = () => {
                 {/* Important Dates */}
                 <section
                     id="importantDates"
-                    className="mt-16"
+                    className="mt-12"
                     aria-labelledby="important-dates-heading"
                 >
-                    <div className="mb-8 text-center">
+                    <div className="mb-6 text-center">
                         <h3
                             id="important-dates-heading"
-                            className="text-3xl font-bold text-foreground"
+                            className="text-2xl font-bold text-foreground"
                         >
                             Important Dates
                         </h3>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         {importantDates.map((importantDate, index) => {
                             const icons = [CalendarDays, Mail, FileText, CalendarDays];
                             const DateIcon = icons[index];
 
                             return (
-                                <Card key={importantDate.label} className="border-2 border-primary/10 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow">
-                                    <DateIcon className="mb-5 h-10 w-10 text-primary" />
-                                    <h4 className="mb-3 text-2xl font-bold text-card-foreground">
+                                <Card key={importantDate.label} className="border border-border p-6 shadow-card transition-shadow duration-200 hover:shadow-glow">
+                                    <DateIcon className="mb-4 h-7 w-7 text-primary" />
+                                    <h4 className="mb-1.5 text-base font-semibold text-card-foreground">
                                         {importantDate.label}
                                     </h4>
-                                    <p className="mb-2 text-3xl font-bold text-primary">
+                                    <p className="mb-2 text-xl font-bold text-primary">
                                         {importantDate.date}
                                     </p>
-                                    <p className="leading-relaxed text-muted-foreground">
+                                    <p className="text-sm leading-relaxed text-muted-foreground">
                                         {importantDate.description}
                                     </p>
                                 </Card>
@@ -168,41 +168,48 @@ const CFP = () => {
 
                 {/* Submission Categories */}
                 <section
-                    className="mt-16"
+                    className="mt-12"
                     aria-labelledby="submission-types-heading"
                 >
-                    <div className="mb-8 text-center">
+                    <div className="mb-6 text-center">
                         <h3
                             id="submission-types-heading"
-                            className="text-3xl font-bold text-foreground"
+                            className="text-2xl font-bold text-foreground"
                         >
                             Submission Categories
                         </h3>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-2">
+                    <div className="grid gap-5 md:grid-cols-2">
 
-                        <Card className="border-2 border-primary/10 p-8">
-                            <FileCheck2 className="mb-5 h-10 w-10 text-primary" />
+                        <Card className="border border-border p-6 shadow-card">
+                            <FileCheck2 className="mb-4 h-7 w-7 text-primary" />
 
-                            <h4 className="mb-3 text-2xl font-bold text-card-foreground">
+                            <h4 className="mb-2 text-lg font-semibold text-card-foreground">
                                 Papers
                             </h4>
 
-                            <p className="leading-relaxed text-muted-foreground">
-                                We solicit submissions in the form of papers in ISEC&apos;27 <a target="_blank" href="https://www.acm.org/publications/proceedings-template" style={{ color: 'blue' }}>standard ACM format with 4 pages.</a>
-
+                            <p className="text-sm leading-relaxed text-muted-foreground">
+                                We solicit submissions in the form of papers in ISEC&apos;27{" "}
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://www.acm.org/publications/proceedings-template"
+                                    className="text-primary hover:underline"
+                                >
+                                    standard ACM format with 4 pages.
+                                </a>
                             </p>
                         </Card>
 
-                        <Card className="border-2 border-primary/10 p-8">
-                            <FileText className="mb-5 h-10 w-10 text-primary" />
+                        <Card className="border border-border p-6 shadow-card">
+                            <FileText className="mb-4 h-7 w-7 text-primary" />
 
-                            <h4 className="mb-3 text-2xl font-bold text-card-foreground">
+                            <h4 className="mb-2 text-lg font-semibold text-card-foreground">
                                 Extended Abstracts &amp; Poster Papers
                             </h4>
 
-                            <p className="leading-relaxed text-muted-foreground">
+                            <p className="text-sm leading-relaxed text-muted-foreground">
                                 Original 2-page submissions in English, submitted
                                 through Microsoft CMT. They may describe case studies, experiments,
                                 best practices, or lessons learned (including figures, appendix, and references).
@@ -214,21 +221,21 @@ const CFP = () => {
 
                 {/* Submission Details */}
                 <section
-                    className="mt-16"
+                    className="mt-12"
                     aria-labelledby="submission-details-heading"
                 >
-                    <div className="mb-8 text-center">
+                    <div className="mb-6 text-center">
                         <h3
                             id="submission-details-heading"
-                            className="text-3xl font-bold text-foreground"
+                            className="text-2xl font-bold text-foreground"
                         >
                             Submission Details
                         </h3>
                     </div>
 
-                    <Card className="border-2 border-primary/10 p-8 md:p-10">
+                    <Card className="border border-border p-6 shadow-card md:p-8">
 
-                        <div className="space-y-5 leading-relaxed text-muted-foreground">
+                        <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
 
                             <p>
                                 <strong className="font-semibold text-foreground">
@@ -250,47 +257,48 @@ const CFP = () => {
                                 </strong>{"   "}
                                 The workshop submission link will be added here once the
                                 official Microsoft CMT submission page is available.
-
                             </p>
-                            <br />
-                            <strong className="font-semibold text-foreground">
-                                Publication policy:
-                            </strong>{" "}
-                            <a
-                                href="https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary hover:underline"
-                            >
-                                https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy
-                            </a>
+
+                            <p>
+                                <strong className="font-semibold text-foreground">
+                                    Publication policy:
+                                </strong>{" "}
+                                <a
+                                    href="https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary hover:underline break-all"
+                                >
+                                    https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy
+                                </a>
+                            </p>
                         </div>
                     </Card>
                 </section>
 
 
                 {/* Acceptance Criteria */}
-                <Card className="mt-16 bg-gradient-hero p-8 text-white shadow-glow md:p-12">
-                    <h3 className="mb-4 text-3xl font-bold">
+                <Card className="mt-12 border border-border bg-muted/50 p-6 shadow-card md:p-10">
+                    <h3 className="mb-3 text-2xl font-bold text-foreground">
                         Acceptance Criteria
                     </h3>
 
-                    <p className="mb-6 text-lg leading-relaxed text-white/90">
+                    <p className="mb-5 text-base leading-relaxed text-muted-foreground">
                         Submissions will be reviewed by experts from research and
                         industry. Selection will consider the following tentative
                         criteria:
                     </p>
 
-                    <ul className="space-y-3 text-lg">
+                    <ul className="space-y-2.5 text-base text-muted-foreground">
                         {acceptanceCriteria.map((criterion) => (
                             <li key={criterion} className="flex items-start gap-3">
-                                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0" />
+                                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                                 <span>{criterion}</span>
                             </li>
                         ))}
                     </ul>
 
-                    <p className="mt-8 text-lg leading-relaxed text-white/90">
+                    <p className="mt-6 text-base leading-relaxed text-muted-foreground">
                         Authors of accepted submissions will receive further instructions
                         for preparing their camera-ready presentations. At least one author
                         of an accepted paper must register for the ISEC conference to
@@ -304,4 +312,3 @@ const CFP = () => {
 };
 
 export default CFP;
-
