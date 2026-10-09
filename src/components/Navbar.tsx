@@ -5,9 +5,9 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Overview", href: "#overview" },
-  { label: "Discussion", href: "#discussion" },
-  { label: "Reviewers", href: "#program-chairs" },
+  { label: "Topics", href: "#discussion" },
   { label: "CFP", href: "#cfp" },
+  { label: "Reviewers", href: "#program-chairs" },
   { label: "Schedule", href: "#format" },
   { label: "Organizers", href: "#organizers" },
 ];
@@ -102,26 +102,32 @@ const Navbar = () => {
         <div className="flex h-16 md:h-[72px] items-center justify-between">
 
           {/* Logo */}
-          <a
-            href="#home"
-            onClick={(event) =>
-              handleNavClick(event, "#home")
-            }
-            className="flex items-center shrink-0"
-          >
+          <div className="flex items-center shrink-0">
             <div>
               <div className="text-base md:text-lg font-bold text-foreground leading-tight">
-                GenAI&SE
-                <span className="text-primary">
-                  {" "}@ ISEC&apos;27
-                </span>
+                <a
+                  href="#home"
+                  onClick={(event) =>
+                    handleNavClick(event, "#home")
+                  }
+                >
+                  GenAI&SE
+                </a>{" "}
+                <a
+                  className="text-primary"
+                  href="https://conf.researchr.org/home/isec-2027"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @ ISEC&apos;27
+                </a>
               </div>
 
               <div className="hidden sm:block text-[11px] md:text-xs text-muted-foreground leading-tight mt-0.5">
                 Co-Pilots to Actors
               </div>
             </div>
-          </a>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">

@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary-dark text-white py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4">GenAI&amp;SE 2027</h3>
             <p className="text-white/80 leading-relaxed">
@@ -17,6 +17,15 @@ const Footer = () => {
               <li><a href="#discussion" className="hover:text-white transition-colors">Key Topics of Discussion</a></li>
               <li><a href="#format" className="hover:text-white transition-colors">Workshop Format</a></li>
               <li><a href="#organizers" className="hover:text-white transition-colors">Organizers</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Past Conferences</h4>
+            <ul className="space-y-2 text-white/80">
+              <li><a href="https://genai4se.github.io/ISEC-Workshop/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ISEC&apos;24</a></li>
+              <li><a href="https://genai4se.github.io/ISEC25-Workshop/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ISEC&apos;25</a></li>
+              <li><a href="https://genai4se.github.io/ISEC26-Workshop/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ISEC&apos;26</a></li>
             </ul>
           </div>
 

@@ -46,12 +46,14 @@ const Overview = () => {
   return (
     <section id="overview" className="py-16 md:py-20 px-6 bg-gradient-section">
       <div className="max-w-6xl mx-auto">
+        <div className="mb-8 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+            Workshop Overview
+          </h2>
+        </div>
+
         <div className="grid items-start gap-8 mb-12 lg:grid-cols-[minmax(0,1fr)_340px]">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
-              Workshop Overview
-            </h2>
-
             <p className="text-base md:text-lg text-muted-foreground mb-5 leading-relaxed">
               Generative AI is evolving from coding assistants and co-pilots
               toward AI systems that can plan, decide, and act inside software
@@ -122,18 +124,27 @@ const Overview = () => {
           ))}
         </div>
 
-        <Card className="p-6 md:p-10 border border-border bg-muted/50 shadow-card">
-          <h3 className="text-2xl font-bold text-foreground mb-5">Workshop Topics</h3>
+        <section className="mt-12" aria-labelledby="workshop-topics-heading">
+          <div className="mb-6 text-center">
+            <h3
+              id="workshop-topics-heading"
+              className="text-2xl font-bold text-foreground"
+            >
+              Workshop Topics
+            </h3>
+          </div>
 
-          <ul className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-base text-muted-foreground">
-            {topics.map((topic) => (
-              <li key={topic} className="flex items-start gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{topic}</span>
-              </li>
-            ))}
-          </ul>
-        </Card>
+          <Card className="border border-border p-6 shadow-card md:p-8">
+            <ul className="grid gap-x-8 gap-y-3 text-base text-muted-foreground md:grid-cols-2">
+              {topics.map((topic) => (
+                <li key={topic} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{topic}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </section>
       </div>
     </section>
   );

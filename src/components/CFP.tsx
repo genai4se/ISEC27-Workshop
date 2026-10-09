@@ -197,7 +197,7 @@ const CFP = () => {
                                     href="https://www.acm.org/publications/proceedings-template"
                                     className="text-primary hover:underline"
                                 >
-                                    standard ACM format with 4 pages.
+                                    standard ACM format.
                                 </a>
                             </p>
                         </Card>
@@ -206,12 +206,19 @@ const CFP = () => {
                             <FileText className="mb-4 h-7 w-7 text-primary" />
 
                             <h4 className="mb-2 text-lg font-semibold text-card-foreground">
-                                Extended Abstracts &amp; Poster Papers
+                                Poster Papers &amp; Extended Abstracts
                             </h4>
 
                             <p className="text-sm leading-relaxed text-muted-foreground">
-                                Original 2-page submissions in English, submitted
-                                through Microsoft CMT. They may describe case studies, experiments,
+                                Original 2-page submissions in English in the form of papers in ISEC&apos;27{" "}
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://www.acm.org/publications/proceedings-template"
+                                    className="text-primary hover:underline"
+                                >
+                                    standard ACM format with 4 pages
+                                </a>. They may describe case studies, experiments,
                                 best practices, or lessons learned (including figures, appendix, and references).
                             </p>
                         </Card>
@@ -255,8 +262,7 @@ const CFP = () => {
                                 <strong className="font-semibold text-foreground">
                                     Submission link:
                                 </strong>{"   "}
-                                The workshop submission link will be added here once the
-                                official Microsoft CMT submission page is available.
+                                The workshop submission link will be added soon.
                             </p>
 
                             <p>
@@ -278,33 +284,45 @@ const CFP = () => {
 
 
                 {/* Acceptance Criteria */}
-                <Card className="mt-12 border border-border bg-muted/50 p-6 shadow-card md:p-10">
-                    <h3 className="mb-3 text-2xl font-bold text-foreground">
-                        Acceptance Criteria
-                    </h3>
+                <section
+                    className="mt-12"
+                    aria-labelledby="acceptance-criteria-heading"
+                >
+                    <div className="mb-6 text-center">
+                        <h3
+                            id="acceptance-criteria-heading"
+                            className="text-2xl font-bold text-foreground"
+                        >
+                            Acceptance Criteria
+                        </h3>
+                    </div>
 
-                    <p className="mb-5 text-base leading-relaxed text-muted-foreground">
-                        Submissions will be reviewed by experts from research and
-                        industry. Selection will consider the following tentative
-                        criteria:
-                    </p>
+                    <Card className="border border-border p-6 shadow-card md:p-8">
+                        <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+                            <p>
+                                Submissions will be reviewed by experts from research and
+                                industry. Selection will consider the following tentative
+                                criteria:
+                            </p>
 
-                    <ul className="space-y-2.5 text-base text-muted-foreground">
-                        {acceptanceCriteria.map((criterion) => (
-                            <li key={criterion} className="flex items-start gap-3">
-                                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                                <span>{criterion}</span>
-                            </li>
-                        ))}
-                    </ul>
+                            <ul className="space-y-2.5">
+                                {acceptanceCriteria.map((criterion) => (
+                                    <li key={criterion} className="flex items-start gap-3">
+                                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                                        <span>{criterion}</span>
+                                    </li>
+                                ))}
+                            </ul>
 
-                    <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                        Authors of accepted submissions will receive further instructions
-                        for preparing their camera-ready presentations. At least one author
-                        of an accepted paper must register for the ISEC conference to
-                        present the paper.
-                    </p>
-                </Card>
+                            <p>
+                                Authors of accepted submissions will receive further instructions
+                                for preparing their camera-ready presentations. At least one author
+                                of an accepted paper must register for the ISEC conference to
+                                present the paper.
+                            </p>
+                        </div>
+                    </Card>
+                </section>
 
             </div>
         </section>

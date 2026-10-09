@@ -43,7 +43,7 @@ const Hero = () => {
           autonomous AI systems in real-world software environments.
         </p>
 
-        <div className="flex justify-center mb-10">
+        {/* <div className="flex justify-center mb-10">
           <a
             href="#"
             aria-label="Program schedule announced soon"
@@ -52,7 +52,7 @@ const Hero = () => {
             <Calendar className="w-4 h-4" />
             Program Schedule — Announced soon
           </a>
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center text-white/85 text-sm md:text-base">
           <div className="flex items-center gap-2">

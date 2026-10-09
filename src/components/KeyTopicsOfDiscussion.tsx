@@ -24,14 +24,14 @@ const questions = [
     text: "What benchmarks, datasets, metrics, and evaluation methods best measure GenAI and agent performance?"
   },
   {
+    icon: Wrench,
+    title: "Technical Debt",
+    text: "What new forms of technical debt and code smells may emerge in agent-based software systems?"
+  },
+  {
     icon: Sparkles,
     title: "Legacy Modernization",
     text: "Can GenAI accelerate modernization, reverse engineering, and transformation of legacy systems?"
-  },
-  {
-    icon: LockKeyhole,
-    title: "Autonomy & Human Oversight",
-    text: "Where should the boundary lie between AI autonomy and human control in software systems?"
   },
 
   {
@@ -39,17 +39,19 @@ const questions = [
     title: "Trust, Security & AgentOps",
     text: "How can organizations build, monitor, secure, and govern trustworthy agentic systems?"
   },
+  {
+    icon: LockKeyhole,
+    title: "Autonomy & Human Oversight",
+    text: "Where should the boundary lie between AI autonomy and human control in software systems?"
+  },
+
 
   {
     icon: UsersRound,
     title: "Future Skills & Human-AI Collaboration",
     text: "What new skills, roles, and learning models are needed as GenAI evolves from co-pilot to actor?"
   },
-  {
-    icon: Wrench,
-    title: "Technical Debt",
-    text: "What new forms of technical debt and code smells may emerge in agent-based software systems?"
-  }
+
 ];
 
 const KeyTopicsOfDiscussion = () => {
