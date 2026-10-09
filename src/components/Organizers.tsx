@@ -15,7 +15,7 @@ const organizers = [
     org: "TCS Research",
     category: "General Chairs",
     image: raveendraImage,
-    bio: "He has 28+ years of experience in software services delivery and related research. His research interests include symbolic AI, Generative AI, neuro-symbolic techniques for software systems transformation, and software testing.",
+    bio: "He has 30+ years of experience in software services delivery and related research. His research interests include symbolic AI, Generative AI, neuro-symbolic techniques for software systems transformation, and software testing.",
     interests: ["Symbolic AI", "Generative AI", "Neuro-symbolic Systems", "Software Testing"],
   },
   {
