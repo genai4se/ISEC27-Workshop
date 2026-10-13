@@ -261,8 +261,15 @@ const CFP = () => {
                             <p>
                                 <strong className="font-semibold text-foreground">
                                     Submission link:
-                                </strong>{"   "}
-                                The workshop submission link will be added soon.
+                                </strong>{" "}
+                                <a
+                                    href="https://cmt3.research.microsoft.com/GenAISE2027"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary hover:underline"
+                                >
+                                    Submit via Microsoft CMT
+                                </a>
                             </p>
 
                             <p>
