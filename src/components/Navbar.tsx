@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -148,10 +149,9 @@ const Navbar = () => {
           relative rounded-md text-sm font-medium
           transition-all duration-200
           ${mobile ? "block px-4 py-3" : "px-3 py-2"}
-          ${
-            isActive
-              ? "bg-primary/10 text-primary"
-              : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+          ${isActive
+            ? "bg-primary/10 text-primary"
+            : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
           }
         `}
       >
@@ -169,10 +169,9 @@ const Navbar = () => {
       className={`
         sticky top-0 z-50 w-full
         border-b border-border transition-all duration-300
-        ${
-          scrolled
-            ? "bg-background/95 backdrop-blur-xl shadow-md"
-            : "bg-background/80 backdrop-blur-md"
+        ${scrolled
+          ? "bg-background/95 backdrop-blur-xl shadow-md"
+          : "bg-background/80 backdrop-blur-md"
         }
       `}
     >
@@ -227,19 +226,17 @@ const Navbar = () => {
                   relative flex items-center gap-1
                   px-3 py-2 rounded-md text-sm font-medium
                   transition-all duration-200
-                  ${
-                    activeSection === "cfp"
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                  ${activeSection === "cfp"
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                   }
                 `}
               >
                 Submission
 
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform ${
-                    submissionOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 transition-transform ${submissionOpen ? "rotate-180" : ""
+                    }`}
                 />
 
                 {activeSection === "cfp" && (
@@ -265,9 +262,24 @@ const Navbar = () => {
                       hover:text-primary
                     "
                   >
-                    Call for Papers
+                    CFP Overview
                   </a>
-
+                  <Link
+                    to="/detailed-cfp"
+                    onClick={() => {
+                      setSubmissionOpen(false);
+                      setMobileOpen(false);
+                    }}
+                    className="
+                      flex items-center justify-between
+                      rounded-md px-3 py-2.5 text-sm
+                      text-foreground hover:bg-primary/10
+                      hover:text-primary
+                    "
+                  >
+                    Detailed CFP
+                    <ExternalLink className="h-4 w-4" />
+                  </Link>
                   <a
                     href={publicationPolicyUrl}
                     target="_blank"
@@ -338,18 +350,16 @@ const Navbar = () => {
                     flex w-full items-center justify-between
                     rounded-lg px-4 py-3 text-left
                     text-sm font-medium
-                    ${
-                      activeSection === "cfp"
-                        ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-primary/5"
+                    ${activeSection === "cfp"
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:bg-primary/5"
                     }
                   `}
                 >
                   Submission
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform ${
-                      submissionOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-4 w-4 transition-transform ${submissionOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 

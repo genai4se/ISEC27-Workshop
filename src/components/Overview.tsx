@@ -53,23 +53,39 @@ const Overview = () => {
         </div>
 
         <div className="grid items-start gap-8 mb-12 lg:grid-cols-[minmax(0,1fr)_340px]">
-          <div>
-            <p className="text-base md:text-lg text-muted-foreground mb-5 leading-relaxed">
-              Generative AI is evolving from coding assistants and co-pilots
-              toward AI systems that can plan, decide, and act inside software
-              systems under human oversight. These systems are increasingly being
-              explored across requirements, development, testing, maintenance,
-              debugging, architecture, and other software engineering activities.
+
+          <div className="space-y-5">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Software is entering a new phase. Until recently, Generative AI
+              mainly helped software engineers write code, understand programs,
+              generate tests, and produce documentation. Today, AI systems are
+              starting to plan changes, work across codebases, run tests, and
+              fix problems across software. In the near future, software can
+              understand a business goal, work across several applications,
+              carry out a sequence of tasks, and report the results; software
+              can continually improve itself while remaining secure, reliable,
+              and under human control.
             </p>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              The Fourth Workshop on Generative AI & Software Engineering
-              explores Agentic AI, multi-agent systems, AgentOps, software
-              architecture, legacy modernization, trust and security,
-              human-AI collaboration, and the engineering challenges of
-              building, operating, evaluating, and trusting AI actors in
-              real-world software environments.
+              The{" "}
+
+              Fourth Workshop on Generative AI and Software Engineering
+              (GenAI&SE)
+
+              , co-located with{" "}
+
+              ISEC&apos;27
+
+              , invites researchers and practitioners from academia and
+              industry to explore various possibilities. Building on the
+              discussions and contributions of the previous three editions,
+              this year&apos;s workshop moves from AI as a copilot to AI as
+              an actor: a system that can plan and carry out tasks, use
+              software tools, and take actions under human oversight.
             </p>
+
+
           </div>
 
           <Card className="border border-border bg-card p-5 shadow-card">

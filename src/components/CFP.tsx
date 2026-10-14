@@ -5,58 +5,102 @@ import {
     FileCheck2,
     FileText,
     Mail,
+    ExternalLink,
 } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
-const researchTracks = [
+import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+
+const topicsOfInterest = [
     {
-        title: "GenAI and Agentic AI in Software Engineering",
-        topics: [
-            "Requirements engineering, analysis, UI/UX, architecture, and design",
-            "Software development, maintenance, refactoring, and re-engineering",
-            "Configuration, verification, testing, and debugging",
-            "Legacy modernization, model engineering, and reverse engineering",
-            "Retrieval-augmented techniques for software analysis",
-            "Agentic and multi-agent frameworks",
-            "New roles, skills, agent tutors, and human-AI collaboration",
-        ],
+        title: "Rethinking Software Development",
+        description:
+            "How does software engineering change when AI can do more than generate code, and work together with developers?",
     },
     {
-        title: "Software Engineering for GenAI and Agentic AI",
-        topics: [
-            "Human interaction with LLMs, agents, and autonomous AI actors",
-            "Architecture and design patterns for GenAI and agentic applications",
-            "AgentOps for operating, monitoring, and maintaining agents",
-            "Human oversight, escalation, control, and boundaries of autonomy",
-            "Software quality, security, privacy, trust, provenance, and evaluation",
-            "Sustainable GenAI-based and agent-based systems",
-            "Evaluation and benchmarking of agentic AI systems",
-        ],
+        title: "Engineering Systems of AI Agents",
+        description:
+            "What does it take to build AI systems containing multiple AI agents that can act reliably in real software environments, and how can we detect and handle their failures?",
+    },
+    {
+        title: "Understanding and Modernising Enterprise Software",
+        description:
+            "How can we transform large, complex software systems without losing the business knowledge built into them using AI agents?",
+    },
+    {
+        title: "Building AI-Native Software and Digital Products",
+        description:
+            "What changes when AI is incorporated into a software product or application from the beginning, essentially the SDLC for AI-native software?",
+    },
+    {
+        title: "From Software Automation to Business Transformation",
+        description:
+            "How will AI-driven software change the way organisations work, serve customers, and create value, including its impact on business processes, business operations, decision support, and customer service?",
+    },
+    {
+        title: "Software Quality, Security, and Trust",
+        description:
+            "How can we ensure that AI-driven software does what it is supposed to do—and does not do what it should not—especially regarding correctness, security, confidentiality, traceability of decisions, regulatory compliance, and trustworthiness?",
+    },
+    {
+        title: "India-Centred Challenges and Opportunities",
+        description:
+            "How can AI-driven software engineering address challenges particularly relevant to India, including local languages, modernisation of systems, voice interfaces, cities, transport, and infrastructure?",
+    },
+];
+
+const contributions = [
+    {
+        title: "Research Papers",
+        description:
+            "Presenting new methods, techniques, architectures, tools, or experimental findings.",
+    },
+    {
+        title: "Industrial Case Studies",
+        description:
+            "Describing applications of Generative AI or AI agents to real software engineering and business problems, including unexpected results, challenges, failures, and approaches that worked in real projects.",
+    },
+    {
+        title: "Demonstrations and Prototypes",
+        description:
+            "Illustrating new capabilities or practical tools to address important software engineering problems.",
+    },
+    {
+        title: "Evaluation Studies",
+        description:
+            "Examining quality, reliability, security, traceability of decisions, performance, cost, or business value of AI-driven approaches.",
+    },
+    {
+        title: "Extended Abstracts",
+        description:
+            "Presenting emerging ideas, open challenges, and promising directions for future research.",
     },
 ];
 
 const acceptanceCriteria = [
-    "Clarity in articulating the problem being solved",
-    "Clear need for Generative AI in addressing the problem",
-    "Application of Software Engineering practices in GenAI",
-    "Novelty of the proposed approach",
+    "Importance of the problem",
+    "Originality",
+    "Clarity of articulation",
+    "Soundness of the approach",
+    "Supporting evidence",
+    "Contribution to software engineering research or practice",
 ];
 
 export const importantDates = [
     {
         date: "8 Nov 2026",
         label: "Submission Deadline",
-        description: "Papers and extended abstracts/poster papers.",
+        description: "Paper and extended abstract submission deadline.",
     },
     {
         date: "8 Dec 2026",
         label: "Acceptance Notification",
-        description: "Notification of accepted papers and extended abstracts/poster papers.",
+        description: "Notification of acceptance.",
     },
     {
         date: "14 Dec 2026",
-        label: "Camera-Ready Deadline",
-        description: "Camera-ready papers and information for the workshop chairs.",
+        label: "Camera-Ready Submission",
+        description: "Camera-ready submission deadline.",
     },
     {
         date: "18 Feb 2027",
@@ -67,8 +111,12 @@ export const importantDates = [
 
 const CFP = () => {
     return (
-        <section id="cfp" className="py-16 md:py-20 px-6 bg-background">
+        <section
+            id="cfp"
+            className="scroll-mt-24 py-16 md:py-20 px-6 bg-background"
+        >
             <div className="mx-auto max-w-6xl">
+
 
                 {/* Call for Papers */}
                 <div className="mb-12 text-center">
@@ -76,15 +124,48 @@ const CFP = () => {
                         Call for Papers
                     </h2>
 
-                    <p className="mx-auto max-w-4xl text-base md:text-lg leading-relaxed text-muted-foreground">
-                        We invite original papers, extended abstracts, and poster papers
-                        describing research, case studies, interesting experiments, best
-                        practices, and lessons learned in applying Generative AI and
-                        Agentic AI to Software Engineering, as well as work applying
-                        Software Engineering practices to build GenAI-enabled and
-                        agentic tools.
+                    {/* <h3 className="mx-auto max-w-4xl text-xl font-semibold text-foreground leading-relaxed">
+                        Workshop: Generative AI and Software Engineering:
+                        From Copilots to Actors
+                    </h3>
+
+                    <p className="mt-3 text-sm font-medium text-primary">
+                        Co-located with{" "}
+                        <a
+                            href="https://conf.researchr.org/home/isec-2027"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                        >
+                            ISEC&apos;27
+                        </a>
+                        {" "} | SPIT Mumbai | 18 Feb 2027
+                    </p> */}
+
+                    <p className="mx-auto mt-6 max-w-4xl text-base md:text-lg leading-relaxed text-muted-foreground">
+                        We invite original research papers, industrial case studies,
+                        experiments, demonstrations, evaluation studies, and extended
+                        abstracts from researchers and practitioners in academia and
+                        industry. We particularly welcome contributions presenting
+                        new techniques, practical experiences, unexpected findings,
+                        failures, and lessons learned in applying Generative AI and
+                        Agentic AI to software engineering and real-world business
+                        problems.
                     </p>
+
+                    {/* ADD THE BUTTON HERE */}
+                    <div className="mt-6 flex justify-center">
+                        <Link
+                            to="/detailed-cfp"
+                            className="inline-flex items-center gap-2 rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                        >
+                            View Detailed CFP
+                            <ExternalLink className="h-4 w-4" />
+                        </Link>
+                    </div>
+
                 </div>
+
 
                 {/* Topics of Interest */}
                 <section
@@ -100,37 +181,78 @@ const CFP = () => {
                         </h3>
 
                         <p className="mx-auto mt-2 max-w-3xl text-sm text-muted-foreground">
-                            Topics of interest include but are not limited to:
+                            We welcome original research papers, industrial case studies,
+                            experiments, demonstrations, and experience reports on the
+                            following themes, including but not limited to them.
                         </p>
                     </div>
 
-                    <div className="grid gap-5 lg:grid-cols-2">
-                        {researchTracks.map((track) => (
+                    <div className="grid gap-3 md:grid-cols-2">
+                        {topicsOfInterest.map((topic, index) => (
                             <Card
-                                key={track.title}
-                                className="border border-border p-6 shadow-card"
+                                key={topic.title}
+                                className="border border-border p-4 shadow-card"
                             >
-                                <h4 className="mb-4 text-lg font-semibold text-card-foreground">
-                                    {track.title}
-                                </h4>
+                                <div className="flex items-center gap-3">
+                                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-semibold text-primary">
+                                        {String.fromCharCode(97 + index)}
+                                    </span>
 
-                                <ul className="space-y-2.5 text-sm text-muted-foreground">
-                                    {track.topics.map((topic) => (
-                                        <li key={topic} className="flex gap-3">
-                                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                                            <span>{topic}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                    <h4 className="text-sm md:text-base font-medium leading-snug text-card-foreground">
+                                        {topic.title}
+                                    </h4>
+                                </div>
                             </Card>
                         ))}
                     </div>
+
                 </section>
 
-                {/* Important Dates */}
+
+
+                {/* Contributions */}
+                <section
+                    className="mt-12"
+                    aria-labelledby="contributions-heading"
+                >
+                    <div className="mb-6 text-center">
+                        <h3
+                            id="contributions-heading"
+                            className="text-2xl font-bold text-foreground"
+                        >
+                            What Kinds of Contributions Are We Looking For?
+                        </h3>
+
+                        <p className="mx-auto mt-2 max-w-3xl text-sm text-muted-foreground">
+                            We welcome contributions from both academia and industry.
+                        </p>
+                    </div>
+
+
+                    <Card className="border border-border p-5 shadow-card md:p-6">
+                        <ul className="grid gap-3 md:grid-cols-2">
+                            {contributions.map((contribution) => (
+                                <li
+                                    key={contribution.title}
+                                    className="flex items-center gap-2.5"
+                                >
+                                    <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
+
+                                    <span className="text-sm md:text-base font-medium text-card-foreground">
+                                        {contribution.title}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </Card>
+
+
+                </section>
+
+                  {/* Important Dates */}
                 <section
                     id="importantDates"
-                    className="mt-12"
+                    className="mt-12 scroll-mt-24"
                     aria-labelledby="important-dates-heading"
                 >
                     <div className="mb-6 text-center">
@@ -144,18 +266,30 @@ const CFP = () => {
 
                     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                         {importantDates.map((importantDate, index) => {
-                            const icons = [CalendarDays, Mail, FileText, CalendarDays];
+                            const icons = [
+                                CalendarDays,
+                                Mail,
+                                FileText,
+                                CalendarDays,
+                            ];
+
                             const DateIcon = icons[index];
 
                             return (
-                                <Card key={importantDate.label} className="border border-border p-6 shadow-card transition-shadow duration-200 hover:shadow-glow">
+                                <Card
+                                    key={importantDate.label}
+                                    className="border border-border p-6 shadow-card transition-shadow duration-200 hover:shadow-glow"
+                                >
                                     <DateIcon className="mb-4 h-7 w-7 text-primary" />
+
                                     <h4 className="mb-1.5 text-base font-semibold text-card-foreground">
                                         {importantDate.label}
                                     </h4>
+
                                     <p className="mb-2 text-xl font-bold text-primary">
                                         {importantDate.date}
                                     </p>
+
                                     <p className="text-sm leading-relaxed text-muted-foreground">
                                         {importantDate.description}
                                     </p>
@@ -165,19 +299,22 @@ const CFP = () => {
                     </div>
                 </section>
 
-
-                {/* Submission Categories */}
+                {/* Submission Guidelines */}
                 <section
                     className="mt-12"
-                    aria-labelledby="submission-types-heading"
+                    aria-labelledby="submission-guidelines-heading"
                 >
                     <div className="mb-6 text-center">
                         <h3
-                            id="submission-types-heading"
+                            id="submission-guidelines-heading"
                             className="text-2xl font-bold text-foreground"
                         >
-                            Submission Categories
+                            Submission Guidelines
                         </h3>
+
+                        <p className="mx-auto mt-2 max-w-3xl text-sm text-muted-foreground">
+                            We invite original contributions in the following formats:
+                        </p>
                     </div>
 
                     <div className="grid gap-5 md:grid-cols-2">
@@ -186,19 +323,12 @@ const CFP = () => {
                             <FileCheck2 className="mb-4 h-7 w-7 text-primary" />
 
                             <h4 className="mb-2 text-lg font-semibold text-card-foreground">
-                                Papers
+                                Research Papers, Case Studies &amp; Evaluation Studies
                             </h4>
 
                             <p className="text-sm leading-relaxed text-muted-foreground">
-                                We solicit submissions in the form of papers in ISEC&apos;27{" "}
-                                <a
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    href="https://www.acm.org/publications/proceedings-template"
-                                    className="text-primary hover:underline"
-                                >
-                                    standard ACM format.
-                                </a>
+                                Up to <strong>4 pages</strong>, prepared in the
+                                ISEC 2027 ACM format.
                             </p>
                         </Card>
 
@@ -206,41 +336,26 @@ const CFP = () => {
                             <FileText className="mb-4 h-7 w-7 text-primary" />
 
                             <h4 className="mb-2 text-lg font-semibold text-card-foreground">
-                                Poster Papers &amp; Extended Abstracts
+                                Extended Abstracts &amp; Demo Abstracts
                             </h4>
 
                             <p className="text-sm leading-relaxed text-muted-foreground">
-                                Original 2-page submissions in English in the form of papers in ISEC&apos;27{" "}
-                                <a
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    href="https://www.acm.org/publications/proceedings-template"
-                                    className="text-primary hover:underline"
-                                >
-                                    standard ACM format with 4 pages
-                                </a>. They may describe case studies, experiments,
-                                best practices, or lessons learned (including figures, appendix, and references).
+                                Up to <strong>500 words</strong>, describing the problem,
+                                approach, key findings or expected contribution, and
+                                relevance to the workshop.
                             </p>
                         </Card>
-
                     </div>
-                </section>
 
-                {/* Submission Details */}
-                <section
-                    className="mt-12"
-                    aria-labelledby="submission-details-heading"
-                >
-                    <div className="mb-6 text-center">
-                        <h3
-                            id="submission-details-heading"
-                            className="text-2xl font-bold text-foreground"
-                        >
+                    {/* Submission Details */}
+                    <Card className="mt-5 border border-border p-6 shadow-card md:p-8">
+                        <h4 className="mb-4 text-lg font-semibold text-card-foreground">
                             Submission Details
-                        </h3>
-                    </div>
+                        </h4>
 
-                    <Card className="border border-border p-6 shadow-card md:p-8">
+                        <p className="mb-4 text-sm text-muted-foreground">
+                            All submissions must be original and written in English.
+                        </p>
 
                         <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
 
@@ -254,7 +369,7 @@ const CFP = () => {
                                     rel="noopener noreferrer"
                                     className="text-primary hover:underline"
                                 >
-                                    https://www.acm.org/publications/proceedings-template
+                                    ACM Proceedings Template
                                 </a>
                             </p>
 
@@ -269,6 +384,7 @@ const CFP = () => {
                                     className="text-primary hover:underline"
                                 >
                                     Submit via Microsoft CMT
+                                    <ExternalLink className="ml-1 inline h-4 w-4" />
                                 </a>
                             </p>
 
@@ -280,57 +396,50 @@ const CFP = () => {
                                     href="https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-primary hover:underline break-all"
+                                    className="text-primary hover:underline"
                                 >
-                                    https://conf.researchr.org/track/isec-2027/isec-2027-research-papers#call-Publication-Policy
+                                    ISEC&apos;27 Publication Policy
+                                    <ExternalLink className="ml-1 inline h-4 w-4" />
                                 </a>
                             </p>
+
                         </div>
                     </Card>
+
                 </section>
 
-
-                {/* Acceptance Criteria */}
+                {/* Review and Selection Criteria */}
                 <section
                     className="mt-12"
-                    aria-labelledby="acceptance-criteria-heading"
+                    aria-labelledby="review-criteria-heading"
                 >
                     <div className="mb-6 text-center">
                         <h3
-                            id="acceptance-criteria-heading"
+                            id="review-criteria-heading"
                             className="text-2xl font-bold text-foreground"
                         >
-                            Acceptance Criteria
+                            Review and Selection Criteria
                         </h3>
                     </div>
 
                     <Card className="border border-border p-6 shadow-card md:p-8">
-                        <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
-                            <p>
-                                Submissions will be reviewed by experts from research and
-                                industry. Selection will consider the following tentative
-                                criteria:
-                            </p>
+                          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                            Submissions will be reviewed by experts from academia
+                            and industry. Selection will consider the importance
+                            of the problem, originality, clarity of articulation,
+                            soundness of the approach, supporting evidence, and
+                            contribution to software engineering research or practice.
+                        </p>
 
-                            <ul className="space-y-2.5">
-                                {acceptanceCriteria.map((criterion) => (
-                                    <li key={criterion} className="flex items-start gap-3">
-                                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                                        <span>{criterion}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <p>
-                                Authors of accepted submissions will receive further instructions
-                                for preparing their camera-ready presentations. At least one author
-                                of an accepted paper must register for the ISEC conference to
-                                present the paper.
-                            </p>
-                        </div>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            At least one author of each accepted submission must
+                            register for the ISEC conference and present the work
+                            at the workshop.
+                        </p>
                     </Card>
                 </section>
 
+              
             </div>
         </section>
     );

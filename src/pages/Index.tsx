@@ -7,6 +7,7 @@ import WorkshopSchedule from "@/components/WorkshopSchedule";
 import Organizers from "@/components/Organizers";
 import Footer from "@/components/Footer";
 import ProgramChairs from "@/components/ProgramChairs";
+import DetailedCFP from "@/components/DetailedCFP"; 
 import MicrosoftCMTNotice from "@/components/MicrosoftCMTNotice";
 
 const Index = () => {
