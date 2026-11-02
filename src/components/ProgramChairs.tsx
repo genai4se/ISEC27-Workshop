@@ -5,7 +5,7 @@ const programChairs = [
     { name: "Pavan Chittimalli", affiliation: "TCS Research" },
     { name: "Rohit Mehra", affiliation: "Accenture Labs" },
     { name: "Sayandeep Mitra", affiliation: "TCS Research" },
-    { name: "Snigdha Athaiya", affiliation: "Affiliation not available in the email" },
+    { name: "Snigdha Athaiya", affiliation: "" },
     { name: "Stanley Samuel", affiliation: "Collins Aerospace" },
     { name: "Sujit Kumar Chakrabarti", affiliation: "IIIT Bangalore" },
     { name: "Vinay Raj", affiliation: "National Institute of Technology Warangal" },
@@ -29,10 +29,15 @@ const ProgramChairs = () => {
                                 className="p-4 rounded-lg bg-background/60 border border-border"
                             >
                                 <p className="text-lg font-medium text-foreground">
-                                    {chair.name}{" "}
-                                    <span className="text-muted-foreground">
-                                        ({chair.affiliation})
-                                    </span>
+                                    {chair.name}
+                                    {chair.affiliation && (
+                                        <>
+                                            {" "}
+                                            <span className="text-muted-foreground">
+                                                ({chair.affiliation})
+                                            </span>
+                                        </>
+                                    )}
                                 </p>
                             </div>
                         ))}
