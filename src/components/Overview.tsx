@@ -99,10 +99,25 @@ const Overview = () => {
                     className="border-b border-border pb-3 leading-snug text-muted-foreground last:border-0 last:pb-0"
                     key={importantDate.label}
                   >
-                    <strong className="text-sm text-foreground">
-                      {importantDate.date}
-                    </strong>
-                    <br />
+                    {importantDate.oldDate && importantDate.newDate ? (
+                      <>
+                        <strong className="text-sm text-foreground line-through decoration-2 decoration-muted-foreground/80">
+                          {importantDate.oldDate}
+                        </strong>
+                        <br />
+                        <strong className="text-sm text-foreground">
+                          {importantDate.newDate}
+                        </strong>
+                        <br />
+                      </>
+                    ) : (
+                      <>
+                        <strong className="text-sm text-foreground">
+                          {importantDate.date}
+                        </strong>
+                        <br />
+                      </>
+                    )}
                     {importantDate.label}
                   </li>
                 ))}

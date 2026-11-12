@@ -6,7 +6,7 @@ const programChairs = [
     { name: "Rohit Mehra", affiliation: "Accenture Labs" },
     { name: "Sayandeep Mitra", affiliation: "TCS Research" },
     { name: "Snigdha Athaiya", affiliation: "" },
-    { name: "Stanley Samuel", affiliation: "Collins Aerospace" },
+    { name: "Stanly Samuel", affiliation: "Collins Aerospace" },
     { name: "Sujit Kumar Chakrabarti", affiliation: "IIIT Bangalore" },
     { name: "Vinay Raj", affiliation: "National Institute of Technology Warangal" },
 ];

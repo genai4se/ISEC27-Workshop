@@ -88,7 +88,8 @@ const acceptanceCriteria = [
 
 export const importantDates = [
     {
-        date: "8 Nov 2026",
+        oldDate: "8 Nov 2026",
+        newDate: "16 Nov 2026",
         label: "Submission Deadline",
         description: "Paper and extended abstract submission deadline.",
     },
@@ -286,9 +287,20 @@ const CFP = () => {
                                         {importantDate.label}
                                     </h4>
 
-                                    <p className="mb-2 text-xl font-bold text-primary">
-                                        {importantDate.date}
-                                    </p>
+                                    <div className="mb-2">
+                                        {importantDate.oldDate && importantDate.newDate ? (
+                                            <p className="flex flex-wrap items-center gap-2 text-xl font-bold text-primary">
+                                                <span className="line-through text-muted-foreground/70">
+                                                    {importantDate.oldDate}
+                                                </span>
+                                                <span>{importantDate.newDate}</span>
+                                            </p>
+                                        ) : (
+                                            <p className="text-xl font-bold text-primary">
+                                                {importantDate.date}
+                                            </p>
+                                        )}
+                                    </div>
 
                                     <p className="text-sm leading-relaxed text-muted-foreground">
                                         {importantDate.description}

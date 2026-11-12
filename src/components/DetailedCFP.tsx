@@ -314,9 +314,18 @@ const DetailedCFP = () => {
                                     {item.label}
                                 </h3>
 
-                                <p className="mt-2 text-lg font-bold text-primary">
-                                    {item.date}
-                                </p>
+                                {item.oldDate && item.newDate ? (
+                                    <div className="mt-2 space-y-1 text-lg font-bold text-primary">
+                                        <p className="line-through text-muted-foreground/70">
+                                            {item.oldDate}
+                                        </p>
+                                        <p>{item.newDate}</p>
+                                    </div>
+                                ) : (
+                                    <p className="mt-2 text-lg font-bold text-primary">
+                                        {item.date}
+                                    </p>
+                                )}
                             </Card>
                         ))}
                     </div>
