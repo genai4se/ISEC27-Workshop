@@ -91,7 +91,7 @@ export const importantDates = [
         oldDate: "8 Nov 2026",
         newDate: "16 Nov 2026",
         label: "Submission Deadline",
-        description: "Paper and extended abstract submission deadline.",
+        description: "The paper submission deadline is strict and will not be extended.",
     },
     {
         date: "8 Dec 2026",
